@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MY CV</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+    }
+
+    .profile-picture {
+      width: 100%;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      object-fit: cover;
+      height: 250px;
+    }
+
+    .accordion-item {
+      margin-bottom: 10px;
+    }
+
+    .accordion-btn {
+      background: none;
+      border: none;
+      color: white;
+      text-align: left;
+      width: 100%;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .btn-icon {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    .accordion-panel {
+      display: none;
+      padding-left: 30px;
+      margin-top: 5px;
+      color: #ecf0f1;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      background-color: #ecf0f1;
+    }
+
+    .edit-button {
+      float: right;
+      padding: 5px 10px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .title-line {
+      border: 1px solid #ccc;
+    }
+
+    .form-section {
+      margin-top: 30px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .form-section input,
+    .form-section textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .form-section button {
+      background-color: #27ae60;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+    }
+
+    #profileImageInput {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- LEFT SIDE -->
+    <div class="sidebar">
+      <img src="photos/profile.jpg" alt="" id="profilePic" class="profile-picture"/>
+      <input type="file" id="profileImageInput" accept="image/*">
+      <div class="left-acc-container">
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <img src="photos/contact.png" alt="" class="btn-icon"> CONTACT
+          </button>
+          <div class="accordion-panel" id="contactInfo">055-809-98-95</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <img src="photos/social-media.png" alt="" class="btn-icon"> SOCIAL MEDIA
+          </button>
+          <div class="accordion-panel" id="socialMedia">Sosial media hesabları...</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <img src="photos/education.png" alt="" class="btn-icon"> EDUCATION
+          </button>
+          <div class="accordion-panel" id="educationInfo">Təhsil məlumatları...</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <img src="photos/skill.png" alt="" class="btn-icon"> SKILLS
+          </button>
+          <div class="accordion-panel" id="skillsInfo">Bacarıqlar...</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <img src="photos/language.png" alt="" class="btn-icon"> LANGUAGES
+          </button>
+          <div class="accordion-panel" id="languagesInfo">Azərbaycan, Rus, İngilis</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="main-content">
+      <button id="editBtn" class="edit-button">Edit</button>
+      <h1 id="userName">Paşayeva Aytac</h1>
+      <h3 id="userTitle">Frontend Developer</h3>
+      <hr class="title-line" />
+
+      <div class="right-acc-container">
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <img src="photos/profile.png" alt="" class="btn-icon"> PROFILE
+          </button>
+          <div class="accordion-panel" id="profileInfo">Profil haqqında məlumat...</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <img src="photos/work-experience.png" alt="" class="btn-icon"> WORK EXPERIENCE
+          </button>
+          <div class="accordion-panel" id="workExperience">İş təcrübəsi...</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <img src="photos/reference.png" alt="" class="btn-icon"> REFERENCE
+          </button>
+          <div class="accordion-panel" id="referenceInfo">Referanslar...</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <img src="photos/certificate.png" alt="" class="btn-icon"> CERTIFICATIONS
+          </button>
+          <div class="accordion-panel" id="certificationsInfo">Sertifikatlar...</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <img src="photos/project.png" alt="" class="btn-icon"> PROJECTS
+          </button>
+          <div class="accordion-panel" id="projectsInfo">Layihələr...</div>
+        </div>
+      </div>
+
+      <!-- FORM SECTION -->
+      <div class="form-section">
+        <h2>Yeni Məlumat Əlavə Et</h2>
+        <form id="cvForm">
+          <input type="text" id="name" placeholder="Adınız" required />
+          <input type="email" id="email" placeholder="Emailiniz" required />
+          <input type="date" id="date" required />
+          <textarea id="description" placeholder="Qısa təsvir" required></textarea>
+          <button type="submit">Yadda Saxla</button>
+        </form>
+        <p id="formError" class="error-message"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("cvForm");
+      const error = document.getElementById("formError");
+
+      // Şəklin dəyişdirilməsi
+      const profileInput = document.getElementById("profileImageInput");
+      const profilePic = document.getElementById("profilePic");
+
+      profileInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            profilePic.src = e.target.result;
+            localStorage.setItem("profilePic", e.target.result);
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      const savedPic = localStorage.getItem("profilePic");
+      if (savedPic) {
+        profilePic.src = savedPic;
+      }
+
+      // Form məlumatları
+      const savedData = JSON.parse(localStorage.getItem("cvData"));
+      if (savedData) {
+        document.getElementById("name").value = savedData.name || "";
+        document.getElementById("email").value = savedData.email || "";
+        document.getElementById("date").value = savedData.date || "";
+        document.getElementById("description").value = savedData.description || "";
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const date = document.getElementById("date").value;
+        const description = document.getElementById("description").value.trim();
+
+        if (!name || !email || !date || !description) {
+          error.textContent = "Zəhmət olmasa bütün sahələri doldurun.";
+          error.style.color = "red";
+          return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          error.textContent = "Düzgün email ünvanı daxil edin.";
+          error.style.color = "red";
+          return;
+        }
+
+        const data = { name, email, date, description };
+        localStorage.setItem("cvData", JSON.stringify(data));
+        error.textContent = "Məlumat uğurla yadda saxlanıldı!";
+        error.style.color = "green";
+      });
+
+      // Accordion funksiyası
+      const accordionButtons = document.querySelectorAll(".accordion-btn");
+      accordionButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const panel = btn.nextElementSibling;
+          panel.style.display = panel.style.display === "block" ? "none" : "block";
+        });
+      });
+    });
+  </script>
+</body>
+  </html>
