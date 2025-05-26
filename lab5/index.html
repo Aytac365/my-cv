@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My CV</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="main-content">
+      <h1>AYTAC <span class="highlight">PAŞAYEVA</span></h1>
+      <h3>STUDENT</h3>
+      <hr class="title-line" />
+
+      <!-- Profile Section -->
+      <div class="section" id="profile-section">
+        <h2>PROFILE</h2>
+        <hr class="right-line" />
+        <p id="profile-text"></p>
+        <button onclick="editSection('profile')">Düzəliş et</button>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="section" id="experience-section">
+        <h2>WORK EXPERIENCE</h2>
+        <hr class="right-line" />
+        <p id="experience-text"></p>
+        <button onclick="editSection('experience')">Düzəliş et</button>
+      </div>
+
+      <!-- Reference Section -->
+      <div class="section" id="reference-section">
+        <h2>REFERENCE</h2>
+        <hr class="right-line" />
+        <p id="reference-text"></p>
+        <button onclick="editSection('reference')">Düzəliş et</button>
+      </div>
+
+      <button onclick="resetAll()">Hamısını Sıfırla</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
